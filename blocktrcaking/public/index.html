@@ -40,44 +40,58 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-    <script>
-      fetch('https://623d99bee8fbc4f16264b76d.mockapi.io/Empresa/1/Lugares')
-          .then(resposta => resposta.json())
-          .then(itens => montarMapa(itens))
-          .catch(error => console.log(error))
-      
-      function montarMapa(itens) {
-          var map = new google.maps.Map(document.getElementById("map"), {
-              zoom : 10,
-              center : new google.maps.LatLng(-23.53642760296254, -46.64621432441258),
-              mapTypeId : google.maps.MapTypeId.ROADMAP
-          });
+  <script>
+    fetch('https://623d99bee8fbc4f16264b76d.mockapi.io/Empresa/1/Lugares')
+      .then(resposta => resposta.json())
+      .then(itens => montarMapa(itens))
+      .catch(error => console.log(error))
 
-          var infoWindow = new google.maps.InfoWindow();
+    function montarMapa(itens) {
+      var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: new google.maps.LatLng(-23.53642760296254, -46.64621432441258),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
 
-          var marker, i;
+      var infoWindow = new google.maps.InfoWindow();
 
-          for(i = 0; i < itens.length; i++) {
-              console.log(itens[i].latitude);
-              marker = new google.maps.Marker({
-                  position : new google.maps.LatLng(
-                      itens[i].lat,
-                      itens[i].lng
-                  ),
-                  map : map
-              });
+      var marker, i;
 
-              google.maps.event.addListener(
-                  marker,
-                  "click",
-                  (function(marker, i) {
-                      return function () {
-                          infoWindow.setContent(itens[i].nomeLugar);
-                          infoWindow.open(map, marker);
-                      };
-                  })(marker, i)
-              )};            
+      for (i = 0; i < itens.length; i++) {
+        console.log(itens[i].latitude);
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(
+            itens[i].lat,
+            itens[i].lng
+          ),
+          map: map
+        });
+
+        google.maps.event.addListener(
+          marker,
+          "click",
+          (function (marker, i) {
+            return function () {
+              infoWindow.setContent(itens[i].nomeLugar);
+              infoWindow.open(map, marker);
+            };
+          })(marker, i)
+        )
+      };
+    }
+    var x = document.getElementById("demo");
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
       }
+    }
+
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
   </script>
 </body>
 

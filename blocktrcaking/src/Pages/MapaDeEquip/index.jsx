@@ -7,6 +7,7 @@ import InterLaranja from "../Assets/InterIconOrange.svg";
 import sairLaranja from "../Assets/icon-sair.svg";
 import './styles.css';
 
+
 function Consulta() {
     function botaodomenu() {
         var menu = document.getElementById("mn");
@@ -115,6 +116,7 @@ function Consulta() {
                         </div>
                     </div>
                 </div>
+                <div id="demo"></div>
             </main>
             <footer>
                 <div className="LogoFooter">

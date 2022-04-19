@@ -183,6 +183,11 @@ main{
     margin-bottom: 50px;
 }
 
+#demo{
+    width: 100px;
+    height: auto;
+}
+
 .AjeitarMain{
     width: 60vw;
     display: flex;
