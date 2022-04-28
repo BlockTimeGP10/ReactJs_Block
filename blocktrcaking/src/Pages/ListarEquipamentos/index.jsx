@@ -6,6 +6,7 @@ import perfilLaranja from "../Assets/perfilBranco.svg";
 import noteLaranja from "../Assets/NoteIconOrange.svg";
 import InterLaranja from "../Assets/InterIconOrange.svg";
 import sairLaranja from "../Assets/icon-sair.svg";
+import interact from 'https://cdn.interactjs.io/v1.10.11/interactjs/index.js';
 import editar from "../Assets/Editar.svg";
 import deletar from "../Assets/Excluir.svg";
 import verNoMapa from "../Assets/verMapa.svg";
@@ -24,23 +25,23 @@ function listarEquip() {
         }
     }
 
-    var listaLugares = [];
+  
+    // var listaLugares = [];
 
-    function listarLugares() {
-        axios('https://623d99bee8fbc4f16264b76d.mockapi.io/Empresa', {
-        }).then(resposta => {
-            if (resposta.status === 200) {
-                console.log(resposta.data)
-                listaLugares = (resposta.data)
-            }
-        })
-            .catch(erro => console.log(erro));
+    // function listarLugares() {
+    //     axios('https://623d99bee8fbc4f16264b76d.mockapi.io/Empresa', {
+    //     }).then(resposta => {
+    //         if (resposta.status === 200) {
+    //             console.log(resposta.data)
+    //             listaLugares = (resposta.data)
+    //         }
+    //     })
+    //         .catch(erro => console.log(erro));
 
-    }
+    // }
 
     return (
         <>
-            {listarLugares}
             <header>
                 <hr className="LinhaHeader" />
                 <div className="TamanhoHeader">
@@ -140,20 +141,12 @@ function listarEquip() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {
-                                    listaLugares.map((lugares) => {
-                                        return (
-                                            <tbody>
-                                                <tr>
-                                                    <td>{lugares.name}</td>
-                                                </tr>
-                                            </tbody>
-                                        )
 
-                                    })
-                                }
                             </tbody>
                         </table>
+                        <div className="BackgroundMap resize-drag">
+                            <div id="map" />
+                        </div>
                     </div>
                 </div>
             </main>
