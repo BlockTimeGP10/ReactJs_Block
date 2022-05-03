@@ -26,7 +26,7 @@
     "optimize": false,
     "keyFile": "",
     "emitEntryPoint": true,
-    "xmlDoc": false,
+    "xmlDoc": true,
     "debugType": "portable"
   },
   "targets": {
@@ -38,8 +38,12 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.16",
+          "RestSharp": "107.3.0",
+          "RestSharp.Newtonsoft.Json.Extensions": "1.0.4",
+          "RestSharp.Serializers.NewtonsoftJson": "107.3.0",
           "Swashbuckle.AspNetCore": "6.3.1",
           "System.IdentityModel.Tokens.Jwt": "6.17.0",
+          "Zabbix": "4.0.7",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -123,22 +127,22 @@
           "Microsoft.Extensions.Configuration.Abstractions.Reference": "5.0.0.0",
           "Microsoft.Extensions.Configuration.Binder": "5.0.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "5.0.0.0",
-          "Microsoft.Extensions.Configuration": "5.0.0.0",
+          "Microsoft.Extensions.Configuration.Reference": "5.0.0.0",
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "5.0.0.0",
-          "Microsoft.Extensions.Configuration.FileExtensions": "5.0.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions.Reference": "5.0.0.0",
           "Microsoft.Extensions.Configuration.Ini": "5.0.0.0",
-          "Microsoft.Extensions.Configuration.Json": "5.0.0.0",
+          "Microsoft.Extensions.Configuration.Json.Reference": "5.0.0.0",
           "Microsoft.Extensions.Configuration.KeyPerFile": "5.0.0.0",
           "Microsoft.Extensions.Configuration.UserSecrets": "5.0.0.0",
           "Microsoft.Extensions.Configuration.Xml": "5.0.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions.Reference": "5.0.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "5.0.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "5.0.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "5.0.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions.Reference": "5.0.0.0",
           "Microsoft.Extensions.FileProviders.Composite": "5.0.0.0",
           "Microsoft.Extensions.FileProviders.Embedded": "5.0.0.0",
-          "Microsoft.Extensions.FileProviders.Physical": "5.0.0.0",
-          "Microsoft.Extensions.FileSystemGlobbing": "5.0.0.0",
+          "Microsoft.Extensions.FileProviders.Physical.Reference": "5.0.0.0",
+          "Microsoft.Extensions.FileSystemGlobbing.Reference": "5.0.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "5.0.0.0",
           "Microsoft.Extensions.Hosting": "5.0.0.0",
           "Microsoft.Extensions.Http": "5.0.0.0",
@@ -292,7 +296,7 @@
           "System.Text.Encoding.Reference": "5.0.0.0",
           "System.Text.Encoding.Extensions.Reference": "5.0.0.0",
           "System.Text.Encodings.Web": "5.0.0.0",
-          "System.Text.Json": "5.0.0.0",
+          "System.Text.Json.Reference": "5.0.0.0",
           "System.Text.RegularExpressions.Reference": "5.0.0.0",
           "System.Threading.Channels": "5.0.0.0",
           "System.Threading.Reference": "5.0.0.0",
@@ -354,7 +358,7 @@
       "Microsoft.AspNetCore.JsonPatch/5.0.16": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
@@ -369,7 +373,7 @@
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson/5.0.16": {
         "dependencies": {
           "Microsoft.AspNetCore.JsonPatch": "5.0.16",
-          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json": "12.0.3",
           "Newtonsoft.Json.Bson": "1.0.2"
         },
         "runtime": {
@@ -591,9 +595,27 @@
           "Microsoft.Extensions.Primitives": "5.0.0"
         }
       },
+      "Microsoft.Extensions.Configuration/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0"
+        }
+      },
       "Microsoft.Extensions.Configuration.Abstractions/5.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "5.0.0"
+        }
+      },
+      "Microsoft.Extensions.Configuration.FileExtensions/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "2.1.1",
+          "Microsoft.Extensions.FileProviders.Physical": "2.1.1"
+        }
+      },
+      "Microsoft.Extensions.Configuration.Json/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "2.1.1",
+          "Microsoft.Extensions.Configuration.FileExtensions": "2.1.1",
+          "Newtonsoft.Json": "12.0.3"
         }
       },
       "Microsoft.Extensions.DependencyInjection/5.0.2": {
@@ -611,6 +633,18 @@
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {},
+      "Microsoft.Extensions.FileProviders.Abstractions/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.0"
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Physical/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.1.1",
+          "Microsoft.Extensions.FileSystemGlobbing": "2.1.1"
+        }
+      },
+      "Microsoft.Extensions.FileSystemGlobbing/2.1.1": {},
       "Microsoft.Extensions.Logging/5.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "5.0.2",
@@ -796,11 +830,11 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/12.0.2": {
+      "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.2.23222"
+            "fileVersion": "12.0.3.23909"
           }
         },
         "compile": {
@@ -809,7 +843,7 @@
       },
       "Newtonsoft.Json.Bson/1.0.2": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
@@ -819,6 +853,50 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "RestSharp/107.3.0": {
+        "dependencies": {
+          "System.Text.Json": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/RestSharp.dll": {
+            "assemblyVersion": "107.3.0.0",
+            "fileVersion": "107.3.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/RestSharp.dll": {}
+        }
+      },
+      "RestSharp.Newtonsoft.Json.Extensions/1.0.4": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "RestSharp": "107.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.Newtonsoft.Json.Extensions.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/RestSharp.Newtonsoft.Json.Extensions.dll": {}
+        }
+      },
+      "RestSharp.Serializers.NewtonsoftJson/107.3.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "RestSharp": "107.3.0"
+        },
+        "runtime": {
+          "lib/net5.0/RestSharp.Serializers.NewtonsoftJson.dll": {
+            "assemblyVersion": "107.3.0.0",
+            "fileVersion": "107.3.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/RestSharp.Serializers.NewtonsoftJson.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -1625,6 +1703,7 @@
           "System.Text.Encoding": "4.3.0"
         }
       },
+      "System.Text.Json/5.0.0": {},
       "System.Text.RegularExpressions/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1730,6 +1809,22 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "Zabbix/4.0.7": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "2.1.1",
+          "Microsoft.Extensions.Configuration.Json": "2.1.1",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ZabbixApi.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/ZabbixApi.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -2230,7 +2325,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration/5.0.0.0": {
+      "Microsoft.Extensions.Configuration.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.dll": {}
         },
@@ -2242,7 +2337,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration.FileExtensions/5.0.0.0": {
+      "Microsoft.Extensions.Configuration.FileExtensions.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.FileExtensions.dll": {}
         },
@@ -2254,7 +2349,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration.Json/5.0.0.0": {
+      "Microsoft.Extensions.Configuration.Json.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.Json.dll": {}
         },
@@ -2296,7 +2391,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/5.0.0.0": {
+      "Microsoft.Extensions.FileProviders.Abstractions.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileProviders.Abstractions.dll": {}
         },
@@ -2314,13 +2409,13 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.FileProviders.Physical/5.0.0.0": {
+      "Microsoft.Extensions.FileProviders.Physical.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileProviders.Physical.dll": {}
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.FileSystemGlobbing/5.0.0.0": {
+      "Microsoft.Extensions.FileSystemGlobbing.Reference/5.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileSystemGlobbing.dll": {}
         },
@@ -3244,7 +3339,7 @@
         },
         "compileOnly": true
       },
-      "System.Text.Json/5.0.0.0": {
+      "System.Text.Json.Reference/5.0.0.0": {
         "compile": {
           "System.Text.Json.dll": {}
         },
@@ -3559,12 +3654,33 @@
       "path": "microsoft.extensions.caching.memory/5.0.0",
       "hashPath": "microsoft.extensions.caching.memory.5.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LjVKO6P2y52c5ZhTLX/w8zc5H4Y3J/LJsgqTBj49TtFq/hAtVNue/WA0F6/7GMY90xhD7K0MDZ4qpOeWXbLvzg==",
+      "path": "microsoft.extensions.configuration/2.1.1",
+      "hashPath": "microsoft.extensions.configuration.2.1.1.nupkg.sha512"
+    },
     "Microsoft.Extensions.Configuration.Abstractions/5.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ETjSBHMp3OAZ4HxGQYpwyGsD8Sw5FegQXphi0rpoGMT74S4+I2mm7XJEswwn59XAaKOzC15oDSOWEE8SzDCd6Q==",
       "path": "microsoft.extensions.configuration.abstractions/5.0.0",
       "hashPath": "microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.FileExtensions/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CDk5CwG0YzlRgvl65J0iK6ahrX12yMRrEat3yVTXjWC+GN9Jg9zHZu2IE4cQIPAMA/IiAI5KjgL08fhP3fPCkw==",
+      "path": "microsoft.extensions.configuration.fileextensions/2.1.1",
+      "hashPath": "microsoft.extensions.configuration.fileextensions.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Json/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IFpONpvdhVEE3S3F4fTYkpT/GyIHtumy2m0HniQanJ80Pj/pUF3Z4wjrHEp1G78rPD+WTo5fRlhdJfuU1Tv2GQ==",
+      "path": "microsoft.extensions.configuration.json/2.1.1",
+      "hashPath": "microsoft.extensions.configuration.json.2.1.1.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/5.0.2": {
       "type": "package",
@@ -3579,6 +3695,27 @@
       "sha512": "sha512-ORj7Zh81gC69TyvmcUm9tSzytcy8AVousi+IVRAI8nLieQjOFryRusSFh7+aLk16FN9pQNqJAiMd7BTKINK0kA==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/5.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UEQB5/QPuLYaCvScZQ9llhcks5xyEUKh41D615FoehRAF9UgGVmXHcCSOH8idHHLRoKm+OJJjEy1oywvuaL33w==",
+      "path": "microsoft.extensions.fileproviders.abstractions/2.1.1",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Physical/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kVCvLm1ePchUgRrQZrno07Mn6knDAzR7vl6eRaI/fem0u6ODg+RTwOYLs4XL39Ttuu+BzEwqzHu3DtDgXT8+vQ==",
+      "path": "microsoft.extensions.fileproviders.physical/2.1.1",
+      "hashPath": "microsoft.extensions.fileproviders.physical.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileSystemGlobbing/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4QDzyCN8cJnThY6mK9SnzovyCZ8KCG9jmC9KqHfFGtazJvmNZP1gcyBkPmqMjP0qwbmEUUyqyA9LLn3FrYXTGw==",
+      "path": "microsoft.extensions.filesystemglobbing/2.1.1",
+      "hashPath": "microsoft.extensions.filesystemglobbing.2.1.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/5.0.0": {
       "type": "package",
@@ -3699,12 +3836,12 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.2": {
+    "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
-      "path": "newtonsoft.json/12.0.2",
-      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "Newtonsoft.Json.Bson/1.0.2": {
       "type": "package",
@@ -3712,6 +3849,27 @@
       "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
+    "RestSharp/107.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qu+A+VAnVLX3OeWVNm11UJz0aVErqSfYqIiOUbJM9x98uLymCOoL/oXRAjMb6XHra27WXxHmzy9EKEOKXWR6Pw==",
+      "path": "restsharp/107.3.0",
+      "hashPath": "restsharp.107.3.0.nupkg.sha512"
+    },
+    "RestSharp.Newtonsoft.Json.Extensions/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fTiw2XyAJPCdRJ4rCiKWQHKN5fJTutIIyxOYjTmcWQwckd+5VCsHOT3AB6u61hDlSBInD4dGgZqRd6nexUER/w==",
+      "path": "restsharp.newtonsoft.json.extensions/1.0.4",
+      "hashPath": "restsharp.newtonsoft.json.extensions.1.0.4.nupkg.sha512"
+    },
+    "RestSharp.Serializers.NewtonsoftJson/107.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+AS2UA2LYWSkRnp+knYyS7tyuWqkpEL32HgYdb8Ope4fppB1nX6/LixoGJhPb7maOIIFPX18Q1ggq5scmqTeQg==",
+      "path": "restsharp.serializers.newtonsoftjson/107.3.0",
+      "hashPath": "restsharp.serializers.newtonsoftjson.107.3.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
@@ -4336,6 +4494,13 @@
       "path": "system.text.encoding.extensions/4.3.0",
       "hashPath": "system.text.encoding.extensions.4.3.0.nupkg.sha512"
     },
+    "System.Text.Json/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+luxMQNZ2WqeffBU7Ml6njIvxc8169NW2oU+ygNudXQGZiarjE7DOtN7bILiQjTZjkmwwRZGTtLzmdrSI/Ustw==",
+      "path": "system.text.json/5.0.0",
+      "hashPath": "system.text.json.5.0.0.nupkg.sha512"
+    },
     "System.Text.RegularExpressions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4405,6 +4570,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Zabbix/4.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TvTZyEV8OoEMjfh0O7Vu9L78eoKHV9d4YfFH+G2+9qXoENJT9CZvFzclxjm4jJdrh/XyFsh5SzA/b2r+sa9w6A==",
+      "path": "zabbix/4.0.7",
+      "hashPath": "zabbix.4.0.7.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
       "type": "referenceassembly",
@@ -4821,7 +4993,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration/5.0.0.0": {
+    "Microsoft.Extensions.Configuration.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4831,7 +5003,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration.FileExtensions/5.0.0.0": {
+    "Microsoft.Extensions.Configuration.FileExtensions.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4841,7 +5013,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration.Json/5.0.0.0": {
+    "Microsoft.Extensions.Configuration.Json.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4876,7 +5048,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/5.0.0.0": {
+    "Microsoft.Extensions.FileProviders.Abstractions.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4891,12 +5063,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.FileProviders.Physical/5.0.0.0": {
+    "Microsoft.Extensions.FileProviders.Physical.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.FileSystemGlobbing/5.0.0.0": {
+    "Microsoft.Extensions.FileSystemGlobbing.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5666,7 +5838,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Text.Json/5.0.0.0": {
+    "System.Text.Json.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

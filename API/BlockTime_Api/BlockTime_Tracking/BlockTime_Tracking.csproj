@@ -14,12 +14,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="RestSharp" Version="107.3.0" />
+    <PackageReference Include="RestSharp.Newtonsoft.Json.Extensions" Version="1.0.4" />
+    <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="107.3.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
+    <PackageReference Include="Zabbix" Version="4.0.7" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
 </Project>

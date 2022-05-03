@@ -66,6 +66,14 @@
               "target": "Package",
               "version": "[107.3.0, )"
             },
+            "RestSharp.Newtonsoft.Json.Extensions": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
+            "RestSharp.Serializers.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[107.3.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.3.1, )"
@@ -73,6 +81,10 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.17.0, )"
+            },
+            "Zabbix": {
+              "target": "Package",
+              "version": "[4.0.7, )"
             }
           },
           "imports": [

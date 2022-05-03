@@ -65,3 +65,9 @@ C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\
 C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\obj\Debug\net5.0\ref\BlockTime_Tracking.dll
 C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\obj\Debug\net5.0\BlockTime_Tracking.pdb
 C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\obj\Debug\net5.0\BlockTime_Tracking.genruntimeconfig.cache
+C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\BlockTime_Tracking.xml
+C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\RestSharp.dll
+C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\obj\Debug\net5.0\BlockTime_Tracking.xml
+C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\RestSharp.Newtonsoft.Json.Extensions.dll
+C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\RestSharp.Serializers.NewtonsoftJson.dll
+C:\Users\53976212857.INFOSCS\Desktop\Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\ZabbixApi.dll
