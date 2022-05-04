@@ -1,5 +1,7 @@
 ﻿using BlockTime_Tracking.Contexts;
 using BlockTime_Tracking.Domains;
+using BlockTime_Tracking.Interfaces;
+using BlockTime_Tracking.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,19 +9,27 @@ using System.Threading.Tasks;
 
 namespace BlockTime_Tracking.Repositories
 {
-    public class EquipamentoRepository
+    public class EquipamentoRepository : IEquipamentoRepository
     {
         BlockTrackingContext ctx = new BlockTrackingContext();
-        ZabbixRepository zabbix = new ZabbixRepository();
-        EmpresaRepository EmpresaMethods = new EmpresaRepository();
-        EquipamentoRepository EquipamentoMethods = new EquipamentoRepository();
-
-        public void cadastrar(Equipamento equipConsole)
+        public Equipamento Criar(NoteViewModel noteAgente)
         {
-            var noteZabbix = zabbix.GetHostByName(equipConsole.NomeNotebook).ToString();
+            ZabbixRepository zabbix = new();
 
-            string[] linhas = noteZabbix.Split(",");
+            Equipamento equipamento = new();
 
+            var hostZabbix = zabbix.GetHostByName(noteAgente.NomeNotebook);
+
+            equipamento.Lat = noteAgente.Lat;
+            equipamento.Lng = noteAgente.Lng;
+            equipamento.IdEquipamento = Int32.Parse(hostZabbix.Id);
+            equipamento.NomeNotebook = noteAgente.NomeNotebook;
+            equipamento.UltimaAtt = DateTime.Now;
+
+            ctx.Equipamentos.Add(equipamento);
+            ctx.SaveChanges();
+
+            return equipamento;
         }
     }
 }

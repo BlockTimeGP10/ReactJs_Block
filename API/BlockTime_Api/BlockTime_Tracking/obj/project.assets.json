@@ -7850,11 +7850,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\53976212857.INFOSCS\\Desktop\\Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
+      "projectUniqueName": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
       "projectName": "BlockTime_Tracking",
-      "projectPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
+      "projectPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
       "packagesPath": "C:\\Users\\53976212857.INFOSCS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\Block\\API\\BlockTime_Api\\BlockTime_Tracking\\obj\\",
+      "outputPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\53976212857.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
