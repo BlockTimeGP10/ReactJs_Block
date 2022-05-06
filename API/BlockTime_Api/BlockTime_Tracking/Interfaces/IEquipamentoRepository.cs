@@ -12,5 +12,15 @@ namespace BlockTime_Tracking.Interfaces
     {
 
         Equipamento Criar(NoteViewModel note);
+
+        public Equipamento BuscarPorId(int id);
+
+        List<Equipamento> ListarPorEmpresa(int idEmpresa);
+
+        List<Equipamento> ListarEquipamentos();
+
+        Equipamento BuscarPorNome(string nome);
+
+        void AtualizarEquipamento(NoteViewModel note);
     }
 }

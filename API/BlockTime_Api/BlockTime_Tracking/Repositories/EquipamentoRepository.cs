@@ -11,25 +11,84 @@ namespace BlockTime_Tracking.Repositories
 {
     public class EquipamentoRepository : IEquipamentoRepository
     {
-        BlockTrackingContext ctx = new BlockTrackingContext();
+        readonly BlockTrackingContext ctx = new();
         public Equipamento Criar(NoteViewModel noteAgente)
         {
             ZabbixRepository zabbix = new();
-
+            EmpresaRepository empresa = new();
             Equipamento equipamento = new();
-
+        
             var hostZabbix = zabbix.GetHostByName(noteAgente.NomeNotebook);
-
+        
             equipamento.Lat = noteAgente.Lat;
             equipamento.Lng = noteAgente.Lng;
             equipamento.IdEquipamento = Int32.Parse(hostZabbix.Id);
             equipamento.NomeNotebook = noteAgente.NomeNotebook;
             equipamento.UltimaAtt = DateTime.Now;
 
+            var Grupos =  hostZabbix.groups.ToArray();
+            foreach (ZabbixApi.Entities.HostGroup item in Grupos)
+            {
+                var empresaBanco = empresa.BuscarPorId(Int32.Parse(item.Id));
+
+                if(empresaBanco != null)
+                {
+                    equipamento.IdEmpresa = empresaBanco.IdEmpresa;
+                }
+            }
             ctx.Equipamentos.Add(equipamento);
             ctx.SaveChanges();
-
+        
             return equipamento;
+         }
+
+        public Equipamento BuscarPorId(int id)
+        {
+            return ctx.Equipamentos.FirstOrDefault(ab => ab.IdEquipamento == id);
         }
+
+        public List<Equipamento> ListarPorEmpresa(int idEmpresa)
+        {
+            List<Equipamento> equipamentos = new();
+
+            EmpresaRepository empresaMtds = new();
+            ZabbixRepository zabbix = new();
+
+            var empresaEquips = empresaMtds.BuscarPorId(idEmpresa);
+            var  resposta = zabbix.GetHostGroupByName(empresaEquips.NomeEmpresa);
+
+            
+
+            return equipamentos;
+        }
+
+        public List<Equipamento> ListarEquipamentos()
+        {
+            return ctx.Equipamentos.ToList();
+        }
+
+        public Equipamento BuscarPorNome(string nome)
+        {
+            ZabbixRepository zbx = new();
+            var equipamento = zbx.GetHostByName(nome);
+            Equipamento equip = BuscarPorId(Int32.Parse(equipamento.Id));
+
+            return equip;
+        }
+
+        public void AtualizarEquipamento(NoteViewModel note)
+        {
+            Equipamento equipAtualizar = BuscarPorNome(note.NomeNotebook);
+            if (equipAtualizar != null)
+            {
+                equipAtualizar.Lat = note.Lat;
+                equipAtualizar.Lng = note.Lng;
+                equipAtualizar.UltimaAtt = DateTime.Now;
+            }
+
+            ctx.Equipamentos.Update(equipAtualizar);
+            ctx.SaveChanges();
+        }
+
     }
 }

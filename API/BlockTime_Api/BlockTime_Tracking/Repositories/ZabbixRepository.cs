@@ -14,71 +14,53 @@ namespace BlockTime_Tracking.Repositories
 {
     public class ZabbixRepository : IZabbixRepository
     {
-        public IEnumerable<ZabbixApi.Entities.HostGroup> GetHostGroups(string nameHost)
+        public IEnumerable<ZabbixApi.Entities.HostGroup> GetHostGroups()
         {
-            using (var context = new Context("http://18.230.102.215/zabbix/api_jsonrpc.php", "Admin", "zabbix"))
-            {
-                var host = context.HostGroups.Get();
-                return host;
-            }
+            using var context = new Context("http://3.17.0.171/zabbix/api_jsonrpc.php", "Admin", "zabbix");
+            var host = context.HostGroups.Get();
+            return host;
         }
 
         public IEnumerable<ZabbixApi.Entities.HostGroup> GetHostGroupsMonitoring()
         {
-            using (var context = new Context("http://18.230.102.215/zabbix/api_jsonrpc.php", "Admin", "zabbix"))
+            using var context = new Context("http://3.17.0.171/zabbix/api_jsonrpc.php", "Admin", "zabbix");
+            var host = context.HostGroups.Get(new
             {
-                var host = context.HostGroups.Get(new
-                {
-                    output = "extend",
-        with_monitored_items = new { }
+                output = "extend",
+                with_monitored_items = new { }
             }); ;
 
-                return host;
-            }
+            return host;
         }
 
         public IEnumerable<ZabbixApi.Entities.HostGroup> GetHostGroupByHost(string nameHost)
         {
-            using (var context = new Context("http://18.230.102.215/zabbix/api_jsonrpc.php", "Admin", "zabbix"))
+            using var context = new Context("http://3.17.0.171/zabbix/api_jsonrpc.php", "Admin", "zabbix");
+            var host = context.HostGroups.Get(new
             {
-                var host = context.HostGroups.Get(new
+                output = "hostid",
+                selectGroups = "extend",
+                filter = new
                 {
-                    output = "hostid",
-                    selectGroups = "extend",
-                    filter = new
-                    {
-                        host = nameHost
-                    }
-                }); ;
+                    host = nameHost
+                }
+            }); ;
 
 
-                return host;
-            }
+            return host;
         }
 
-        public IEnumerable<ZabbixApi.Entities.HostGroup> GetHostGroupByName(string nameHostGroup)
-        {
-            using (var context = new Context("http://18.230.102.215/zabbix/api_jsonrpc.php", "Admin", "zabbix"))
-            {
-                var host = context.HostGroups.Get(new {
-                    output = "extend",
-        selectHosts = "extend",
-        filter = new {
-                    name = 
-                        nameHostGroup
-        }
-            });
-                return host;
-            }
+        public ZabbixApi.Entities.HostGroup GetHostGroupByName(string nameHostGroup)
+        {using var context = new Context("http://3.17.0.171/zabbix/api_jsonrpc.php", "Admin", "zabbix");
+            var host = context.HostGroups.GetByName(nameHostGroup);
+            return host;
         }
 
         public ZabbixApi.Entities.Host GetHostByName(string nameHost)
         {
-            using (var context = new Context("http://18.230.102.215/zabbix/api_jsonrpc.php", "Admin", "zabbix"))
-            {
-                var host = context.Hosts.GetByName(nameHost);
-                return host;
-            }
+            using var context = new Context("http://3.17.0.171/zabbix/api_jsonrpc.php", "Admin", "zabbix");
+            var host = context.Hosts.GetByName(nameHost);
+            return host;
         }
     }
 }

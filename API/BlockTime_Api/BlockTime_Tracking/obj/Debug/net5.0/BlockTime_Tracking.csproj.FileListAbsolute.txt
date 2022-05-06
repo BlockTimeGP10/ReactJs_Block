@@ -144,3 +144,12 @@ C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_T
 C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\obj\Debug\net5.0\BlockTime_Tracking.xml
 C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\obj\Debug\net5.0\BlockTime_Tracking.pdb
 C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\obj\Debug\net5.0\BlockTime_Tracking.genruntimeconfig.cache
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\K4os.Compression.LZ4.dll
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\K4os.Hash.xxHash.dll
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\MySql.Data.dll
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\Ubiety.Dns.Core.dll
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\ZstdNet.dll
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\API\BlockTime_Api\BlockTime_Tracking\bin\Debug\net5.0\MySql.EntityFrameworkCore.dll

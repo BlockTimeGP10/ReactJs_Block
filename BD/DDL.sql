@@ -1,18 +1,19 @@
-CREATE DATABASE BLOCKTIME_TRACKING;
+create database BlockTimeTracking;
 
-USE BLOCKTIME_TRACKING;
+use BlockTimeTracking;
 
-CREATE TABLE EMPRESA(
-idEmpresa int primary key NOT NULL,
-nomeEmpresa varchar(200) NOT NULL
+create table EMPRESAS(
+idEmpresa int primary key not null,
+nomeEmpresa varchar(200) not null
 );
 
-CREATE TABLE EQUIPAMENTOS(
-idEquipamento int primary key NOT NULL,
-ultimaAtt smalldatetime,
-lat varchar(30) NOT NULL,
-lng varchar(30) NOT NULL,
-nomeNotebook char(17) UNIQUE NOT NULL,
+create table EQUIPAMENTOS(
+idEquipamento int not null,
+idEmpresa int not null,
+ultimaAtt datetime,
+lat varchar(30) not null,
+lng varchar(30) not null,
+primary key (idequipamento),
+foreign key (idEmpresa) references EMPRESAS(idEmpresa),
+nomeNotebook char(17) unique not null
 );
-
-

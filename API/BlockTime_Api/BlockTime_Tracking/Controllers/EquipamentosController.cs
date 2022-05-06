@@ -22,16 +22,24 @@ namespace BlockTime_Tracking.Controllers
             _EquipamentoRepository = new EquipamentoRepository();
         }
 
-        //[HttpGet]
-        //public IActionResult Login()
-        //{
-        //    return Ok(_EquipamentoRepository.Login());
-        //}
-
         [HttpPost]
         public IActionResult CriarNote(NoteViewModel noteAgente)
         {
-            return Ok(_EquipamentoRepository.Criar(noteAgente));
+            _EquipamentoRepository.Criar(noteAgente);
+            return StatusCode(201);
+        }
+
+        [HttpPut]
+        public IActionResult AtualizarNote(NoteViewModel noteAgente)
+        {
+            _EquipamentoRepository.AtualizarEquipamento(noteAgente);
+            return StatusCode(200);
+        }
+
+        [HttpGet]
+        public IActionResult ListarEquipamentos()
+        {
+            return Ok(_EquipamentoRepository.ListarEquipamentos());
         }
     }
 }
