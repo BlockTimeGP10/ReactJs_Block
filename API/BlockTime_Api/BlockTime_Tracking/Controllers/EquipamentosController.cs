@@ -36,6 +36,17 @@ namespace BlockTime_Tracking.Controllers
             return StatusCode(200);
         }
 
+        [HttpPut]
+        public IActionResult BuscarPorNome(NoteViewModel noteAgente)
+        {
+            var equip = _EquipamentoRepository.BuscarPorNome(noteAgente.NomeNotebook);
+            if (equip == null)
+            {
+                return BadRequest();
+            }
+            return StatusCode(200);
+        }
+
         [HttpGet]
         public IActionResult ListarEquipamentos()
         {

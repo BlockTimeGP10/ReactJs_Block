@@ -1,0 +1,10 @@
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\bin\Debug\BlockTimeTracking.exe.config
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\bin\Debug\BlockTimeTracking.exe
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\bin\Debug\BlockTimeTracking.pdb
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\bin\Debug\Newtonsoft.Json.dll
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\bin\Debug\Newtonsoft.Json.xml
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\obj\Debug\BlockTimeTracking.csproj.AssemblyReference.cache
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\obj\Debug\BlockTimeTracking.csproj.CoreCompileInputs.cache
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\obj\Debug\BlockTimeTracking.csproj.CopyComplete
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\obj\Debug\BlockTimeTracking.exe
+C:\Users\53976212857.INFOSCS\Desktop\ReactJs_Block\AgenteEMC\BlockTimeTracking\obj\Debug\BlockTimeTracking.pdb
