@@ -36,7 +36,7 @@ namespace BlockTime_Tracking.Controllers
             return StatusCode(200);
         }
 
-        [HttpPut]
+        [HttpPut("/Nome")]
         public IActionResult BuscarPorNome(NoteViewModel noteAgente)
         {
             var equip = _EquipamentoRepository.BuscarPorNome(noteAgente.NomeNotebook);
