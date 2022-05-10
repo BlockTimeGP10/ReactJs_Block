@@ -1,12 +1,13 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Collections.Generic;
 using System.Device.Location;
 using System.Linq;
 using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -41,7 +42,6 @@ namespace BlockTimeTracking
         {
             HttpClient _httpClient = new HttpClient();
             bool tentarDenovo = true;
-            bool api = false;
 
             while (tentarDenovo)
             {
@@ -55,67 +55,24 @@ namespace BlockTimeTracking
 
                 if (coord.IsUnknown != true)
                 {
+                    bool api = false;
                     noteSend.Lat = coord.Latitude.ToString();
                     noteSend.Lng = coord.Longitude.ToString();
-                    System.Net.HttpStatusCode tst;
-
-                    string json = $@"{{
- Lat : {noteSend.Lat},
- Lng : {noteSend.Lng},
- NomeNotebook : {noteSend.NomeNotebook}
-}}";
-                    using (var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json"))
+                    using (var content = new StringContent(JsonSerializer.Serialize(noteSend), System.Text.Encoding.UTF8, "application/json"))
                     {
-                        HttpResponseMessage result = _httpClient.PutAsync("http://localhost:5000/api/Equipamentos/Nome", content).Result;
-                        if (result.StatusCode == System.Net.HttpStatusCode.OK)
-                        {
-
-                        }
-                        string returnValue = result.Content.ReadAsStringAsync().Result;
-                        var stt = result.StatusCode;
-                        tst = stt;
-                        throw new Exception($"Failed to put data: ({result.StatusCode}): {returnValue}");
-                    }
-                    
-                    if (tst == System.Net.HttpStatusCode.BadRequest)
-                    {
-                        Console.WriteLine("não achou");
-                        do
-                        {
-                            string json2 = $@"{{
- Lat : {noteSend.Lat},
- Lng : {noteSend.Lng},
- NomeNotebook : {noteSend.NomeNotebook}
-}}";
-                            using (var content = new StringContent(json2, System.Text.Encoding.UTF8, "application/json"))
-                            {
-                                HttpResponseMessage result = _httpClient.PostAsync("http://localhost:5000/api/Equipamentos", content).Result;
-                                Console.WriteLine(result.StatusCode);
-                                if (result.StatusCode == System.Net.HttpStatusCode.Created)
-                                    api = true;
-                                Thread.Sleep(3600000);
-                                Console.WriteLine("Parabéns");
-                                Console.ReadLine();
-                                string returnValue = result.Content.ReadAsStringAsync().Result;
-                                throw new Exception($"Failed to POST data: ({result.StatusCode}): {returnValue}");
-                            }
-                        } while (api != true);
-                    }
-                    else
-                    {
-                        Console.WriteLine("tu entra aqui???");
-                        using (var content = new StringContent(noteSend.ToString(), System.Text.Encoding.UTF8, "application/json"))
-                        {
-                            HttpResponseMessage result = _httpClient.PutAsync("http://localhost:5000/api/Equipamentos", content).Result;
+                        do {
+                            HttpResponseMessage result = _httpClient.PostAsync("http://localhost:5000/api/Equipamentos", content).Result;
                             if (result.StatusCode == System.Net.HttpStatusCode.OK)
+                            {
                                 api = true;
-                            Thread.Sleep(3600000);
-                            Console.WriteLine("Parabéns");
-                            Console.ReadLine();
+                            }
                             string returnValue = result.Content.ReadAsStringAsync().Result;
                             throw new Exception($"Failed to put data: ({result.StatusCode}): {returnValue}");
-                        }
+                        } 
+                        while (api != true);
+             
                     }
+
                 }
                 else
                 {

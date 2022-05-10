@@ -26,7 +26,7 @@ namespace BlockTime_Tracking.Controllers
         public IActionResult CriarNote(NoteViewModel noteAgente)
         {
             _EquipamentoRepository.Criar(noteAgente);
-            return StatusCode(201);
+            return StatusCode(200);
         }
 
         [HttpPut]

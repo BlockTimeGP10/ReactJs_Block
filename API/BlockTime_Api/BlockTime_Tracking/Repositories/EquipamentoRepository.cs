@@ -17,29 +17,49 @@ namespace BlockTime_Tracking.Repositories
             ZabbixRepository zabbix = new();
             EmpresaRepository empresa = new();
             Equipamento equipamento = new();
-        
-            var hostZabbix = zabbix.GetHostByName(noteAgente.NomeNotebook);
-        
-            equipamento.Lat = noteAgente.Lat;
-            equipamento.Lng = noteAgente.Lng;
-            equipamento.IdEquipamento = Int32.Parse(hostZabbix.Id);
-            equipamento.NomeNotebook = noteAgente.NomeNotebook;
-            equipamento.UltimaAtt = DateTime.Now;
 
-            var Grupos =  hostZabbix.groups.ToArray();
-            foreach (ZabbixApi.Entities.HostGroup item in Grupos)
+            var noteBuscado = BuscarPorNome(noteAgente.NomeNotebook);
+            
+            if (noteBuscado == null)
             {
-                var empresaBanco = empresa.BuscarPorId(Int32.Parse(item.Id));
+                var hostZabbix = zabbix.GetHostByName(noteAgente.NomeNotebook);
 
-                if(empresaBanco != null)
+                equipamento.Lat = noteAgente.Lat;
+                equipamento.Lng = noteAgente.Lng;
+                equipamento.IdEquipamento = Int32.Parse(hostZabbix.Id);
+                equipamento.NomeNotebook = noteAgente.NomeNotebook;
+                equipamento.UltimaAtt = DateTime.Now;
+
+                var Grupos = hostZabbix.groups.ToArray();
+                foreach (ZabbixApi.Entities.HostGroup item in Grupos)
                 {
-                    equipamento.IdEmpresa = empresaBanco.IdEmpresa;
+                    var empresaBanco = empresa.BuscarPorId(Int32.Parse(item.Id));
+
+                    if (empresaBanco != null)
+                    {
+                        equipamento.IdEmpresa = empresaBanco.IdEmpresa;
+                    }
                 }
+                ctx.Equipamentos.Add(equipamento);
+                ctx.SaveChanges();
+
+                return equipamento;
             }
-            ctx.Equipamentos.Add(equipamento);
-            ctx.SaveChanges();
-        
-            return equipamento;
+            else
+            {
+                Equipamento equipAtualizar = BuscarPorNome(noteAgente.NomeNotebook);
+                if (equipAtualizar != null)
+                {
+                    equipAtualizar.Lat = noteAgente.Lat;
+                    equipAtualizar.Lng = noteAgente.Lng;
+                    equipAtualizar.UltimaAtt = DateTime.Now;
+                }
+
+                ctx.Equipamentos.Update(equipAtualizar);
+                ctx.SaveChanges();
+
+                return equipAtualizar;
+            }
          }
 
         public Equipamento BuscarPorId(int id)
