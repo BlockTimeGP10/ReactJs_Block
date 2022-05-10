@@ -67,7 +67,7 @@ namespace BlockTimeTracking
                                 api = true;
                             }
                             string returnValue = result.Content.ReadAsStringAsync().Result;
-                            throw new Exception($"Failed to put data: ({result.StatusCode}): {returnValue}");
+                            Thread.Sleep(3600000);
                         } 
                         while (api != true);
              
