@@ -21,6 +21,8 @@ namespace BlockTime_Tracking.Interfaces
 
         Equipamento BuscarPorNome(string nome);
 
+        string AdcionarMaquina(EquipamentozbxViewModel equipado);
+
         void AtualizarEquipamento(NoteViewModel note);
     }
 }

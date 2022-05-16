@@ -1,0 +1,54 @@
+.Container-tela-login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.Logo-blocktime-img{
+    width: 25vw;
+    height: 30vh;
+    left: 10%;
+    top: 10%;
+}
+.Container-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 100px;
+    height: 90vh;
+    width: 70vw;
+}
+.Container-logo-bemvindo{
+    margin: 15% 20% 20% 10%;
+}
+.img-bemvindo{
+    width: 50vw;
+    height: 50vh;
+}
+.Container-login {
+    display: flex;
+    flex-direction: column;
+}
+.inputs{
+    border-radius: 5px;
+    width: 27vw;
+    height: 4vh;
+}
+.Input-credencial{
+}
+.Input-senha{
+}
+.btn-login{
+    width: 12vw;
+    height: 7vh;
+    background-color: #FF5122;
+    border-radius: 7px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 150%;
+    font-weight: 700;
+    margin: 0%;
+}
+@media (max-width:420px) {
+    
+}

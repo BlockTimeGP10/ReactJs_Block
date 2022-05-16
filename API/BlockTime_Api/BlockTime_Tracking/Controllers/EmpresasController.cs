@@ -29,6 +29,13 @@ namespace BlockTime_Tracking.Controllers
             return Ok();
         }
 
+        [HttpPost("/Cadastrar")]
+        public IActionResult CriarEmpresas(string nomeEmpresa)
+        {
+            EmpresaRepository.CadastrarEmpresa(nomeEmpresa);
+            return Ok();
+        }
+
         [HttpGet]
         public IActionResult ListarEmpresas()
         {

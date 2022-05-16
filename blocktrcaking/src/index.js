@@ -1,27 +1,57 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import ListarEquip from './Pages/ListarEquipamentos';
-import MapaEquipamento from './Pages/MapaDeEquip/index';
-import reportWebVitals from './reportWebVitals';
 import {
-  Route,
-  BrowserRouter,
-  Routes,
+    Route,
+    BrowserRouter,
+    Routes,
+    Navigate
 } from 'react-router-dom';
 
-const routing = (
-  <BrowserRouter>
-    <div>
-      <Routes>
-        <Route path="/" element={<App/>}/>
-        <Route path="/MapaEquipamento" element={<MapaEquipamento/>}/>
-        <Route path="/ListarEquipamento" element={<ListarEquip/>}/>
-      </Routes>
-    </div>
-  </BrowserRouter>
-);      
+import './index.css';
+
+import Login from '../src/Pages/Login/Login.jsx';
+import NotFound from './Pages/NotFound/NotFound'
+import ListarEquipamentos from './Pages/ListarEquipamentos/ListarEquipamentos';
+import Empresas from './Pages/Empresas/Empresas.jsx';
+import MapaEquipamento from './Pages/MapaDeEquip/index';
+import reportWebVitals from './reportWebVitals';
+
+const routing = ( <
+    BrowserRouter >
+    <
+    div >
+    <
+    Routes >
+    <
+    Route exact path = "/"
+    element = { < Login / > }
+    /> <
+    Route path = "/MapaEquipamento"
+    element = { < MapaEquipamento / > }
+    /> <
+    Route path = "/ListarEquipamentos"
+    element = { < ListarEquipamentos / > }
+    /> <
+    Route path = "/Empresas"
+    element = { < Empresas / > }
+    />
+
+    <
+    Route path = "/NotFound"
+    element = { < NotFound / > }
+    />
+
+    <
+    Route path = "*"
+    element = { < Navigate to = "/NotFound"
+        replace / > }
+    />
+
+    <
+    /Routes> <
+    /div> <
+    /BrowserRouter>
+);
 
 ReactDOM.render(routing, document.getElementById('root'))
 

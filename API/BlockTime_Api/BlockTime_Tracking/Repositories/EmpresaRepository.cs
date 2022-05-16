@@ -33,9 +33,10 @@ namespace BlockTime_Tracking.Repositories
 
         }
 
-        public void CadastrarEmpresa()
+        public string CadastrarEmpresa(string NomeEmpresa)
         {
-
+            ZabbixRepository zabbix = new();
+            return zabbix.CreateHostGroup(NomeEmpresa);
         }
 
         public void AdcionarEmpresas()

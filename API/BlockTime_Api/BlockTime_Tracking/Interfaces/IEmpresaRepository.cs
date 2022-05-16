@@ -15,5 +15,7 @@ namespace BlockTime_Tracking.Interfaces
         void AdcionarEmpresas();
 
         void Deletar(int idEmpresa);
+
+        string CadastrarEmpresa(string NomeEmpresa);
     }
 }

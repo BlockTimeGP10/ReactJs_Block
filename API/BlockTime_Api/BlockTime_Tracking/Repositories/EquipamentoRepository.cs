@@ -100,6 +100,13 @@ namespace BlockTime_Tracking.Repositories
             return equip;
         }
 
+        public string AdcionarMaquina(EquipamentozbxViewModel equipado)
+        {
+            ZabbixRepository zbx = new();
+       
+            return zbx.CreateHost(equipado);
+        }
+
         public void AtualizarEquipamento(NoteViewModel note)
         {
             Equipamento equipAtualizar = BuscarPorNome(note.NomeNotebook);

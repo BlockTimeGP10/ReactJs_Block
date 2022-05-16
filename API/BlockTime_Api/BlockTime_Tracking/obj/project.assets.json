@@ -8340,19 +8340,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\53976212857.INFOSCS\\.nuget\\packages\\": {}
+    "C:\\Users\\caio0\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
+      "projectUniqueName": "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
       "projectName": "BlockTime_Tracking",
-      "projectPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
-      "packagesPath": "C:\\Users\\53976212857.INFOSCS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\obj\\",
+      "projectPath": "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
+      "packagesPath": "C:\\Users\\caio0\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\53976212857.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\caio0\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

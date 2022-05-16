@@ -1,0 +1,405 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+
+.input-header{
+    display: none;
+}
+.grid{
+    width: 80vw;
+}
+
+
+body{
+    background-color: #F2F2F2;
+}
+.alignLogo{
+    display: flex;
+    justify-content: flex-end;
+}
+.LinhaHeader{
+    background-color: #175D83;
+    height: 12px;
+    width: 100vw;
+    border-width: 0;
+    margin: 0;
+}
+
+.LogoEscrito{
+    color: #003E6C;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    letter-spacing: 0.1em;
+}
+
+.EscBlock{
+    font-weight: 800;
+}
+
+.Proj{
+    font-weight: 300;
+}
+
+.LogoHeader{
+    display: flex;
+    width: 191.45px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.TamanhoHeader{
+    width: 100vw;
+    height: 101px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.TamanhoHeader img {
+    width: 72.45px;
+    height: 61.24px;
+}
+
+.PainelAdmin{
+    padding-top: 10px;
+    width: 17vw;
+    background-color: white;
+    filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
+}
+
+.navigationPainel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.PainelAdmin a{
+    text-decoration: none;
+    color: #003E6C;
+}
+
+#pessoa{
+    font-weight: bold;
+}
+
+.partcima{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.PrinAside{
+    padding-bottom: 16px;
+    color: #003E6C;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.FotoPerfil{
+    width: 95px;
+    height: 92px;
+    border-radius: 100%;
+}
+
+.cardSec{
+    margin-top: 7px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding-left: 7px;
+}
+
+.cardSec div{
+    width: 32px;
+    margin-right: 8px;
+}
+
+.selecionado{
+    background-color: #00659F;
+    color: white;
+}
+
+.navigatio2{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.desisto{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.Sair{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 7px;
+}
+
+main{
+    width: 87vw;
+    margin-right: 10vw;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+}
+
+.partFoto{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.partFoto img{
+    margin-bottom: 5px;
+}
+
+.RealMain{
+    display: flex;
+    flex-direction: column;
+    height: 690px;
+    width: auto;
+    margin-bottom: 50px;
+}
+
+.AjeitarMain{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.AjeitarMain span{
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+footer{
+    background-color: #00659F;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.LogoFooter img {
+    width: 72.45px;
+    height: 61.24px;
+}
+
+.LogoFooter{
+    display: flex;
+    width: 191.45px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LogoEscrito2{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    letter-spacing: 0.1em;
+}
+#map{
+    width: 90%;
+    height: 90%;
+}
+.BackgroundMap{
+    width: 840px;
+    height: 590px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px; 
+}
+
+.menuResponsivo{
+    display: none;
+}
+
+@media (max-width:420px) {
+
+    *:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu {
+  background: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.hamburguer {
+  position: relative;
+  display: block;
+  top: 28px;
+  background: #003E6C;
+  width: 37px;
+  height: 4.5px;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+
+.hamburguer:before,
+.hamburguer:after {
+  background: #000;
+  content: '';
+  display: block;
+  border-radius: 5px;
+  background: #003E6C;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+}
+
+.hamburguer:before {
+  top: -10px;
+}
+
+.hamburguer:after {
+  bottom: -10px;
+}
+
+input:checked ~ label .hamburguer {
+  transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburguer:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+input:checked ~ label .hamburguer:after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+header{
+    width: 100vw;
+}
+.grid{
+    width: 100vw;
+}
+.alignLogo{
+    display: inline-flex;
+    justify-content: space-between;
+}
+.TamanhoHeader{
+    display: inline-flex;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.BackgroundMap{
+    width: 80vw;
+}
+
+.PainelAdmin{
+   display: none;
+   position: absolute;
+   z-index: 2;
+   width: 100vw;
+   animation-duration: 0.7s;
+  animation-name: slidein;
+}
+
+.partFoto{
+    animation-name: slidein;
+}
+.navigationPainel{
+    animation-name: slidein;
+    animation-direction: reverse;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+    
+  }
+
+footer{
+    width: 100vw;
+}
+
+.menuResponsivo{
+    display: inline-block;
+    width: 10px;
+}
+
+#burguer{
+    width: 40px;
+}
+
+.RealMain{
+    width: 100vw;
+}
+main{
+    margin-right: 5vw;
+}
+
+.AjeitarMain{
+    width: 100vw;
+    margin-bottom: 10px;
+}
+
+.AjeitarMain span{ 
+    font-size: 30px;
+}
+
+.BackgroundMap{
+    width: 80vw;
+}
+
+.desisto{
+    width: 17%;
+    display: flex;
+    justify-content: space-between;
+}
+.Sair{
+    margin-top: 13px;
+    margin-left: 9px;
+}
+
+}
