@@ -14,7 +14,7 @@ namespace BlockTime_Tracking
 {
     public class Startup
     {
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services
@@ -32,6 +32,19 @@ namespace BlockTime_Tracking
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
+                c.CustomSchemaIds(type => type.ToString());
+            });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("corsPolicy",
+
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+
+                    });
             });
         }
 

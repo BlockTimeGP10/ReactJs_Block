@@ -59,18 +59,28 @@ namespace BlockTime_Tracking.Repositories
 
         public string CreateHost(EquipamentozbxViewModel NovoEquipamento)
         {
+            EmpresaRepository empresaMtds = new();
             EquipamentoRepository equipMtds = new();
             using var context = new Context("http://3.17.0.171/zabbix/api_jsonrpc.php", "Admin", "zabbix");
             ZabbixApi.Entities.Host equip = new();
             equip.name = NovoEquipamento.nomeEquipmento;
 
-            foreach (ZabbixApi.Entities.HostGroup item in NovoEquipamento.grupos)
+            foreach (GruposViewModel item in NovoEquipamento.grupos)
             {
-                equip.groups.Add(item);
+                var empresaBuscada = empresaMtds.BuscarPorId(Int32.Parse(item.groupid));
+                var grupo = GetHostGroupByName(empresaBuscada.NomeEmpresa);
+                equip.groups.Add(grupo);
             }
-            foreach (ZabbixApi.Entities.Template item in NovoEquipamento.templates)
+            foreach (TemplatesViewModel item in NovoEquipamento.templates)
             {
-                equip.templates.Add(item);
+                IEnumerable<ZabbixApi.Entities.Template> templates = context.Templates.Get();
+                foreach (ZabbixApi.Entities.Template template in templates)
+                {
+                    if (template.Id == item.templateid)
+                    {
+                        equip.templates.Add(template);
+                    }
+                }
             }
 
             //equip.groups.Add()

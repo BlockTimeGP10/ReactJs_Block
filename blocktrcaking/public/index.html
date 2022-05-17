@@ -41,7 +41,7 @@
     -->
 
   <script>
-    fetch('https://623d99bee8fbc4f16264b76d.mockapi.io/Empresa/1/Lugares')
+    fetch('http://localhost:5000/api/Equipamentos')
       .then(resposta => resposta.json())
       .then(itens => montarMapa(itens))
       .catch(error => console.log(error))
@@ -58,7 +58,7 @@
       var marker, i;
 
       for (i = 0; i < itens.length; i++) {
-        console.log(itens[i].latitude);
+        console.log(itens[i].lat);
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(
             itens[i].lat,
@@ -72,7 +72,7 @@
           "click",
           (function (marker, i) {
             return function () {
-              infoWindow.setContent(itens[i].nomeLugar);
+              infoWindow.setContent(itens[i].nomeNotebook);
               infoWindow.open(map, marker);
             };
           })(marker, i)

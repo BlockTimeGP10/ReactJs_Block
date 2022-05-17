@@ -22,18 +22,17 @@ namespace BlockTime_Tracking.Controllers
             EmpresaRepository = new EmpresaRepository();
         }
 
-        [HttpPost]
+        [HttpPatch]
         public IActionResult AdcionarEmpresas()
         {
             EmpresaRepository.AdcionarEmpresas();
             return Ok();
         }
 
-        [HttpPost("/Cadastrar")]
+        [HttpPost("~/Cadastrar")]
         public IActionResult CriarEmpresas(string nomeEmpresa)
         {
-            EmpresaRepository.CadastrarEmpresa(nomeEmpresa);
-            return Ok();
+            return Ok(EmpresaRepository.CadastrarEmpresa(nomeEmpresa));
         }
 
         [HttpGet]

@@ -29,7 +29,7 @@ namespace BlockTime_Tracking.Controllers
             return StatusCode(200);
         }
 
-        [HttpPost("/Cadastrar")]
+        [HttpPost("~/CadastrarEquip")]
         public IActionResult CadastrarNote(EquipamentozbxViewModel note)
         {
             _EquipamentoRepository.AdcionarMaquina(note);

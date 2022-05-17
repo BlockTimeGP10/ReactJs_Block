@@ -2,79 +2,6 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Amazon.Lambda.APIGatewayEvents/2.4.0": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {}
-        }
-      },
-      "Amazon.Lambda.ApplicationLoadBalancerEvents/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.1/Amazon.Lambda.ApplicationLoadBalancerEvents.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Amazon.Lambda.ApplicationLoadBalancerEvents.dll": {}
-        }
-      },
-      "Amazon.Lambda.AspNetCoreServer/7.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Amazon.Lambda.APIGatewayEvents": "2.4.0",
-          "Amazon.Lambda.ApplicationLoadBalancerEvents": "2.1.0",
-          "Amazon.Lambda.Core": "2.1.0",
-          "Amazon.Lambda.Logging.AspNetCore": "3.1.0",
-          "Amazon.Lambda.Serialization.SystemTextJson": "2.2.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/Amazon.Lambda.AspNetCoreServer.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Amazon.Lambda.AspNetCoreServer.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
-      "Amazon.Lambda.Core/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Amazon.Lambda.Core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Amazon.Lambda.Core.dll": {}
-        }
-      },
-      "Amazon.Lambda.Logging.AspNetCore/3.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Amazon.Lambda.Core": "1.2.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "2.1.0",
-          "Microsoft.Extensions.Logging": "2.1.0",
-          "Microsoft.Extensions.Logging.Abstractions": "2.1.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Amazon.Lambda.Logging.AspNetCore.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Amazon.Lambda.Logging.AspNetCore.dll": {}
-        }
-      },
-      "Amazon.Lambda.Serialization.SystemTextJson/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Amazon.Lambda.Core": "2.1.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
-        }
-      },
       "BouncyCastle.NetCore/1.8.5": {
         "type": "package",
         "compile": {
@@ -261,11 +188,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/5.0.16": {
+      "Microsoft.EntityFrameworkCore/5.0.17": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.16",
-          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.16",
+          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.17",
+          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.17",
           "Microsoft.Extensions.Caching.Memory": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.2",
           "Microsoft.Extensions.Logging": "5.0.0",
@@ -280,7 +207,7 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/5.0.16": {
+      "Microsoft.EntityFrameworkCore.Abstractions/5.0.17": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
@@ -289,7 +216,7 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/5.0.16": {
+      "Microsoft.EntityFrameworkCore.Analyzers/5.0.17": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -817,7 +744,7 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/12.0.3": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -848,19 +775,6 @@
         },
         "runtime": {
           "lib/net5.0/RestSharp.dll": {}
-        }
-      },
-      "RestSharp.Newtonsoft.Json.Extensions/1.0.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "RestSharp": "106.10.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/RestSharp.Newtonsoft.Json.Extensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/RestSharp.Newtonsoft.Json.Extensions.dll": {}
         }
       },
       "RestSharp.Serializers.NewtonsoftJson/107.3.0": {
@@ -2523,97 +2437,6 @@
     }
   },
   "libraries": {
-    "Amazon.Lambda.APIGatewayEvents/2.4.0": {
-      "sha512": "QDDGZq2RwY4BBn2ai/dLLCdeHZBp1cSwqrjAe/m371z6Sv6pza8ZsVnZYxE+Dqmhh4UF0uZ6t520tVqOYcEzzQ==",
-      "type": "package",
-      "path": "amazon.lambda.apigatewayevents/2.4.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "amazon.lambda.apigatewayevents.2.4.0.nupkg.sha512",
-        "amazon.lambda.apigatewayevents.nuspec",
-        "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll",
-        "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.xml",
-        "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.dll",
-        "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.xml"
-      ]
-    },
-    "Amazon.Lambda.ApplicationLoadBalancerEvents/2.1.0": {
-      "sha512": "lxOKr4kuooqQV84YsNjgrJp7c4lcYDe+RPIMcdvpLEM6XlLzar38OoG4DeCdzsgnxy0aFQ25nzaDUnrqjIFC/A==",
-      "type": "package",
-      "path": "amazon.lambda.applicationloadbalancerevents/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "amazon.lambda.applicationloadbalancerevents.2.1.0.nupkg.sha512",
-        "amazon.lambda.applicationloadbalancerevents.nuspec",
-        "lib/netcoreapp3.1/Amazon.Lambda.ApplicationLoadBalancerEvents.dll",
-        "lib/netcoreapp3.1/Amazon.Lambda.ApplicationLoadBalancerEvents.xml",
-        "lib/netstandard2.0/Amazon.Lambda.ApplicationLoadBalancerEvents.dll",
-        "lib/netstandard2.0/Amazon.Lambda.ApplicationLoadBalancerEvents.xml"
-      ]
-    },
-    "Amazon.Lambda.AspNetCoreServer/7.1.0": {
-      "sha512": "LkqmO93jiAYTI5y5uBWiKX0kSjQRPMG/95MydX/L+8d+3xVncpygTa4oYtVvVkIZ3wS6895CB+utT7cbPSL3kw==",
-      "type": "package",
-      "path": "amazon.lambda.aspnetcoreserver/7.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "amazon.lambda.aspnetcoreserver.7.1.0.nupkg.sha512",
-        "amazon.lambda.aspnetcoreserver.nuspec",
-        "lib/net6.0/Amazon.Lambda.AspNetCoreServer.dll",
-        "lib/net6.0/Amazon.Lambda.AspNetCoreServer.xml",
-        "lib/netcoreapp3.1/Amazon.Lambda.AspNetCoreServer.dll",
-        "lib/netcoreapp3.1/Amazon.Lambda.AspNetCoreServer.xml"
-      ]
-    },
-    "Amazon.Lambda.Core/2.1.0": {
-      "sha512": "ok06UhfBZw6j6+PhiJR9C0EOMuJvnq8rMCHVkaFmPFrlI/q447ukwGZQKaAKqodV+MNTfpb/iPxjgUPVbSlVVw==",
-      "type": "package",
-      "path": "amazon.lambda.core/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "amazon.lambda.core.2.1.0.nupkg.sha512",
-        "amazon.lambda.core.nuspec",
-        "lib/net6.0/Amazon.Lambda.Core.dll",
-        "lib/net6.0/Amazon.Lambda.Core.xml",
-        "lib/netstandard2.0/Amazon.Lambda.Core.dll",
-        "lib/netstandard2.0/Amazon.Lambda.Core.xml"
-      ]
-    },
-    "Amazon.Lambda.Logging.AspNetCore/3.1.0": {
-      "sha512": "4SD+db3WUBMTl+0p/4C2/zalkG2gMFc9PYwLv4UGPkq6WUlek9hmom0igKkcGY5/1uprEdG/zQ5abKUfs6z0dQ==",
-      "type": "package",
-      "path": "amazon.lambda.logging.aspnetcore/3.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "amazon.lambda.logging.aspnetcore.3.1.0.nupkg.sha512",
-        "amazon.lambda.logging.aspnetcore.nuspec",
-        "lib/netstandard2.0/Amazon.Lambda.Logging.AspNetCore.dll",
-        "lib/netstandard2.0/Amazon.Lambda.Logging.AspNetCore.xml"
-      ]
-    },
-    "Amazon.Lambda.Serialization.SystemTextJson/2.2.0": {
-      "sha512": "ENIKiMBVUegIbwHwg4P0XjJKXazTlCS05bqRKrn9BTUWDZQjPp5RaFs1h2+22H4SiqWosNxKrNCeiXyHJnwOHw==",
-      "type": "package",
-      "path": "amazon.lambda.serialization.systemtextjson/2.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "amazon.lambda.serialization.systemtextjson.2.2.0.nupkg.sha512",
-        "amazon.lambda.serialization.systemtextjson.nuspec",
-        "lib/net6.0/Amazon.Lambda.Serialization.SystemTextJson.dll",
-        "lib/net6.0/Amazon.Lambda.Serialization.SystemTextJson.xml",
-        "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll",
-        "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.xml"
-      ]
-    },
     "BouncyCastle.NetCore/1.8.5": {
       "sha512": "6uxsQw2UXrt82VQAWC2td3oBSJjUZ3P4u4DliagB8wf67KsU53V8sW9xwdF+IwZOOZFR0TCZuv/YKZ2BlrfAag==",
       "type": "package",
@@ -2934,45 +2757,45 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.pdb"
       ]
     },
-    "Microsoft.EntityFrameworkCore/5.0.16": {
-      "sha512": "niMGaRvTPPGAhuhKxFdmdfeW5Vo6rvhNXy2vnRotC7ToR/1ST6iDqZCIvW4L/Pt2+ISiFbvcqRQIE9MrNSMUZQ==",
+    "Microsoft.EntityFrameworkCore/5.0.17": {
+      "sha512": "cfsvkajdtqQT+aqInu5nRcUPnzdkrS4AtnQONThx0inNTBTxPXZj2/YAc6u3YuYiEidGCL3vxZOwtz3pLM57Ow==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/5.0.16",
+      "path": "microsoft.entityframeworkcore/5.0.17",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.5.0.16.nupkg.sha512",
+        "microsoft.entityframeworkcore.5.0.17.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/5.0.16": {
-      "sha512": "nGESdyRnKGQ0PBUBrtVwGz3U13/C7RKcOctps2WozCGo5fHnQmcVtZ23mYc3Ri1LSMY+l4vLblBPJUzRaPaAWA==",
+    "Microsoft.EntityFrameworkCore.Abstractions/5.0.17": {
+      "sha512": "4GpkNWMryNmdrhK9VfgCMTqFjfMRhWUTLalCFrDcInWa90OMESyOU3rQjnYI4ghwTduWjJ2JOSrZbx/G2wv7Wg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/5.0.16",
+      "path": "microsoft.entityframeworkcore.abstractions/5.0.17",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.5.0.16.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.5.0.17.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/5.0.16": {
-      "sha512": "BiSrqLpJ6dv6xOH1xuHG/85edPfQo5DbuUZJqXNCOm3DD9BjnxaeVYnl2EUdadEUbCTTNVhXT0iKnaOpD5bv6A==",
+    "Microsoft.EntityFrameworkCore.Analyzers/5.0.17": {
+      "sha512": "Gk+AQKXi5KDJgvakivZL1lTrVwidLEBvPg6BLoR0XZcEXytd/SGQKV0YhPAuL0m1+EVp/2DfBbJU/2Ub4Q7NJg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/5.0.16",
+      "path": "microsoft.entityframeworkcore.analyzers/5.0.17",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.5.0.16.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.5.0.17.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -3723,10 +3546,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/12.0.3": {
-      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
-      "path": "newtonsoft.json/12.0.3",
+      "path": "newtonsoft.json/12.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3749,9 +3572,8 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.3.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "packageIcon.png"
+        "newtonsoft.json.12.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "Newtonsoft.Json.Bson/1.0.2": {
@@ -3791,21 +3613,6 @@
         "restsharp.107.3.0.nupkg.sha512",
         "restsharp.nuspec",
         "restsharp.png"
-      ]
-    },
-    "RestSharp.Newtonsoft.Json.Extensions/1.0.4": {
-      "sha512": "fTiw2XyAJPCdRJ4rCiKWQHKN5fJTutIIyxOYjTmcWQwckd+5VCsHOT3AB6u61hDlSBInD4dGgZqRd6nexUER/w==",
-      "type": "package",
-      "path": "restsharp.newtonsoft.json.extensions/1.0.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net452/RestSharp.Newtonsoft.Json.Extensions.dll",
-        "lib/net452/RestSharp.Newtonsoft.Json.Extensions.xml",
-        "lib/netstandard2.0/RestSharp.Newtonsoft.Json.Extensions.dll",
-        "lib/netstandard2.0/RestSharp.Newtonsoft.Json.Extensions.xml",
-        "restsharp.newtonsoft.json.extensions.1.0.4.nupkg.sha512",
-        "restsharp.newtonsoft.json.extensions.nuspec"
       ]
     },
     "RestSharp.Serializers.NewtonsoftJson/107.3.0": {
@@ -8324,15 +8131,14 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Amazon.Lambda.AspNetCoreServer >= 7.1.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.16",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.16",
+      "Microsoft.EntityFrameworkCore >= 5.0.17",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.16",
       "MySql.EntityFrameworkCore >= 5.0.13",
       "RestSharp >= 107.3.0",
-      "RestSharp.Newtonsoft.Json.Extensions >= 1.0.4",
       "RestSharp.Serializers.NewtonsoftJson >= 107.3.0",
       "Swashbuckle.AspNetCore >= 6.3.1",
       "System.IdentityModel.Tokens.Jwt >= 6.17.0",
@@ -8340,19 +8146,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\caio0\\.nuget\\packages\\": {}
+    "C:\\Users\\53976212857.INFOSCS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
+      "projectUniqueName": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
       "projectName": "BlockTime_Tracking",
-      "projectPath": "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
-      "packagesPath": "C:\\Users\\caio0\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\obj\\",
+      "projectPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
+      "packagesPath": "C:\\Users\\53976212857.INFOSCS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\caio0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\53976212857.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8378,10 +8184,6 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Amazon.Lambda.AspNetCoreServer": {
-            "target": "Package",
-            "version": "[7.1.0, )"
-          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[5.0.16, )"
@@ -8389,6 +8191,10 @@
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
             "version": "[5.0.16, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.17, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -8411,10 +8217,6 @@
           "RestSharp": {
             "target": "Package",
             "version": "[107.3.0, )"
-          },
-          "RestSharp.Newtonsoft.Json.Extensions": {
-            "target": "Package",
-            "version": "[1.0.4, )"
           },
           "RestSharp.Serializers.NewtonsoftJson": {
             "target": "Package",

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj": {}
+    "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj": {
+    "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
+        "projectUniqueName": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
         "projectName": "BlockTime_Tracking",
-        "projectPath": "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
-        "packagesPath": "C:\\Users\\caio0\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\caio0\\OneDrive\\Área de Trabalho\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\obj\\",
+        "projectPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\BlockTime_Tracking.csproj",
+        "packagesPath": "C:\\Users\\53976212857.INFOSCS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\53976212857.INFOSCS\\Desktop\\ReactJs_Block\\API\\BlockTime_Api\\BlockTime_Tracking\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\caio0\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\53976212857.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,10 +40,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Amazon.Lambda.AspNetCoreServer": {
-              "target": "Package",
-              "version": "[7.1.0, )"
-            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[5.0.16, )"
@@ -51,6 +47,10 @@
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[5.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -73,10 +73,6 @@
             "RestSharp": {
               "target": "Package",
               "version": "[107.3.0, )"
-            },
-            "RestSharp.Newtonsoft.Json.Extensions": {
-              "target": "Package",
-              "version": "[1.0.4, )"
             },
             "RestSharp.Serializers.NewtonsoftJson": {
               "target": "Package",
