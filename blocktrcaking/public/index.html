@@ -61,8 +61,8 @@
         console.log(itens[i].lat);
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(
-            itens[i].lat,
-            itens[i].lng
+            parseFloat(itens[i].lat.replace(',' , '.')),
+            parseFloat(itens[i].lng.replace(',' , '.'))
           ),
           map: map
         });

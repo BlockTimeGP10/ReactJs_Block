@@ -58,6 +58,8 @@ namespace BlockTime_Tracking
 
             app.UseSwagger();
 
+            app.UseCors("corsPolicy");
+
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "BlockTime_Tracking");
